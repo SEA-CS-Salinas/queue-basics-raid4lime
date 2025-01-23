@@ -1,7 +1,7 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
+//Name - Casey Martinez
 
 import java.util.Queue;
 import java.util.Stack;
@@ -16,15 +16,22 @@ public class PalinList
 
 	public PalinList()
 	{
+	    Queue<Integer> queue;
+		stack = new Stack<>();
 		setList("");
 	}
+	
 
 	public PalinList(String list)
 	{
+        setList() = Queue<Integer> queue;
+		stack = new Stack<>();
 	}
 
 	public void setList(String list)
 	{
+        setList() = Queue<Integer> queue;
+	    stack = new Stack<>();
 	}
 
 	public boolean isPalin()
@@ -33,5 +40,16 @@ public class PalinList
 	}
 
 
-	//write a toString method
-}
+
+public String toString()
+	{
+	    
+	    if (isPalin())
+	    {
+	        return queue + " is a palinlist.\n";
+	    }
+	    else
+	    {
+	       return queue + " is not a palinlist.\n";
+	    }
+	}
