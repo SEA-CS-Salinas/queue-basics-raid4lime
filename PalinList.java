@@ -17,21 +17,27 @@ public class PalinList
 	public PalinList()
 	{
 	    Queue<Integer> queue;
-		stack = new Stack<>();
 		setList("");
+		
+	    //stack = new Stack<>();
 	}
 	
 
 	public PalinList(String list)
 	{
-        setList() = Queue<Integer> queue;
-		stack = new Stack<>();
+        queue = new LinkedList<Integer>();
+        setList(list);
+		
+		//stack = new Stack<>();
 	}
 
 	public void setList(String list)
 	{
-        setList() = Queue<Integer> queue;
-	    stack = new Stack<>();
+		
+        queue = new LinkedList<Integer>();
+        setList(list);
+
+	    //stack = new Stack<>();
 	}
 
 	public boolean isPalin()
@@ -47,9 +53,9 @@ public String toString()
 	    if (isPalin())
 	    {
 	        return queue + " is a palinlist.\n";
-	    }
+	    }    
 	    else
-	    {
+	    {    
 	       return queue + " is not a palinlist.\n";
 	    }
 	}
