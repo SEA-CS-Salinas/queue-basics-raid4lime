@@ -11,51 +11,61 @@ import java.util.LinkedList;
 
 public class PalinList
 {
-	private Queue<String> queue;
-	private Stack<String> stack;
+	private Queue<String> queue; // basic variable
+	private Stack<String> stack; // basic variable
 
 	public PalinList()
 	{
-	    Queue<Integer> queue;
-		setList("");
+		setList(""); // default constructor 
 		
-	    //stack = new Stack<>();
 	}
 	
 
 	public PalinList(String list)
 	{
-        queue = new LinkedList<Integer>();
-        setList(list);
+        	setList(list); // paramatrized constructor 
 		
-		//stack = new Stack<>();
 	}
-
+   	// Method to setlists
 	public void setList(String list)
 	{
 		
-        queue = new LinkedList<Integer>();
-        setList(list);
-
-	    //stack = new Stack<>();
+            queue = new LinkedList<>(); // makes a new LinkedList/queue
+	    stack = new Stack<>(); // makes a new Stack
+	    
+	    String[] items = list.split(" "); // splits items in a list
+	    for(String item : items) {
+	        queue.add(item); // adds items into the queue
+	        stack.push(item); // adds items into Stack
+	    }
 	}
 
 	public boolean isPalin()
 	{
-		return true;
+	    // While the queue is not empty it gets rid of items from the queue and Stack 
+		while(!queue.isEmpty()){
+		    String queueEle = queue.poll(); 
+		    String stackEle = stack.pop(); 
+		
+		if(!queueEle.equals(stackEle)){
+		    return false; //used to compare the queue to the stack, ensuring they are equal.
+		}
 	}
+	return true;
+  }	
 
-
-
-public String toString()
+	public String toString()
 	{
-	    
+	    ArrayList<String> oQueue = new ArrayList<>(queue); // used so it does not mess with the queue directly
+	   
+	    //if the boolean returned true it is a palinlist, if not it's not a palinlist. It is also used to return the queue
 	    if (isPalin())
 	    {
-	        return queue + " is a palinlist.\n";
+	        return oQueue + " is a palinlist.\n";
 	    }    
 	    else
 	    {    
-	       return queue + " is not a palinlist.\n";
+	       return oQueue + " is not a palinlist.\n";
 	    }
 	}
+}
